@@ -1,9 +1,0 @@
-{
-	"id": "e2Hd517QWfF4tVh",
-	"json": "{\"id\":\"e2Hd517QWfF4tVh\",\"url\":\"https://www.iana.org/\",\"loadedUrl\":\"https://www.iana.org/\",\"uniqueKey\":\"https://www.iana.org\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":1,\"errorMessages\":[\"ReferenceError: Cannot access 'processInstructions' before initialization\\n    at PlaywrightCrawler.requestHandler [as userProvidedRequestHandler] (file:///Users/rajattyagi/Applications/DockerizedApplications/pa/aws-eks/jxl-test/chatGPT/openai-scraper/dist/main.js:175:38)\\n    at async wrap (/Users/rajattyagi/Applications/DockerizedApplications/pa/aws-eks/jxl-test/chatGPT/openai-scraper/node_modules/@apify/timeout/index.js:52:21)\"],\"headers\":{},\"userData\":{\"__crawlee\":{\"state\":5}}}",
-	"method": "GET",
-	"orderNo": 1691664429910,
-	"retryCount": 1,
-	"uniqueKey": "https://www.iana.org",
-	"url": "https://www.iana.org/"
-}

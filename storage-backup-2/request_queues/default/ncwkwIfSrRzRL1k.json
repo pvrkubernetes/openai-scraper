@@ -1,9 +1,0 @@
-{
-	"id": "ncwkwIfSrRzRL1k",
-	"json": "{\"id\":\"ncwkwIfSrRzRL1k\",\"url\":\"https://rbi.org.in/Scripts/BS_ViewBulletin.aspx\",\"loadedUrl\":\"https://rbi.org.in/Scripts/BS_ViewBulletin.aspx\",\"uniqueKey\":\"https://rbi.org.in/Scripts/BS_ViewBulletin.aspx\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":1,\"errorMessages\":[\"ReferenceError: Cannot access 'processInstructions' before initialization\\n    at PlaywrightCrawler.requestHandler [as userProvidedRequestHandler] (file:///Users/rajattyagi/Applications/DockerizedApplications/pa/aws-eks/jxl-test/chatGPT/openai-scraper/dist/main.js:133:42)\\n    at runNextTicks (node:internal/process/task_queues:60:5)\\n    at process.processImmediate (node:internal/timers:449:9)\\n    at process.callbackTrampoline (node:internal/async_hooks:130:17)\\n    at async wrap (/Users/rajattyagi/Applications/DockerizedApplications/pa/aws-eks/jxl-test/chatGPT/openai-scraper/node_modules/@apify/timeout/index.js:52:21)\"],\"headers\":{},\"userData\":{\"depth\":1,\"__crawlee\":{\"state\":5}}}",
-	"method": "GET",
-	"orderNo": 1691664889087,
-	"retryCount": 1,
-	"uniqueKey": "https://rbi.org.in/Scripts/BS_ViewBulletin.aspx",
-	"url": "https://rbi.org.in/Scripts/BS_ViewBulletin.aspx"
-}

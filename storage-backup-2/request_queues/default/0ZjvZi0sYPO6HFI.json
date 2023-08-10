@@ -1,9 +1,0 @@
-{
-	"id": "0ZjvZi0sYPO6HFI",
-	"json": "{\"id\":\"0ZjvZi0sYPO6HFI\",\"url\":\"https://rbi.org.in/scripts/FS_FAQs.aspx?fn=5\",\"uniqueKey\":\"https://rbi.org.in/scripts/FS_FAQs.aspx?fn=5\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"depth\":1}}",
-	"method": "GET",
-	"orderNo": 1691664869539,
-	"retryCount": 0,
-	"uniqueKey": "https://rbi.org.in/scripts/FS_FAQs.aspx?fn=5",
-	"url": "https://rbi.org.in/scripts/FS_FAQs.aspx?fn=5"
-}

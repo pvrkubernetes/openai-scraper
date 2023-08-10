@@ -1,9 +1,0 @@
-{
-	"id": "PRLK8Ydud3wBChN",
-	"json": "{\"id\":\"PRLK8Ydud3wBChN\",\"url\":\"https://www.iana.org/domains/root/db/zip.html\",\"uniqueKey\":\"https://www.iana.org/domains/root/db/zip.html\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"depth\":2}}",
-	"method": "GET",
-	"orderNo": 1691664437003,
-	"retryCount": 0,
-	"uniqueKey": "https://www.iana.org/domains/root/db/zip.html",
-	"url": "https://www.iana.org/domains/root/db/zip.html"
-}

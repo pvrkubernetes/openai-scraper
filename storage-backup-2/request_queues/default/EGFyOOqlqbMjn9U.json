@@ -1,9 +1,0 @@
-{
-	"id": "EGFyOOqlqbMjn9U",
-	"json": "{\"id\":\"EGFyOOqlqbMjn9U\",\"url\":\"https://rbi.org.in/Scripts/FS_Glossary.aspx?fn=9\",\"uniqueKey\":\"https://rbi.org.in/Scripts/FS_Glossary.aspx?fn=9\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"depth\":1}}",
-	"method": "GET",
-	"orderNo": 1691664869552,
-	"retryCount": 0,
-	"uniqueKey": "https://rbi.org.in/Scripts/FS_Glossary.aspx?fn=9",
-	"url": "https://rbi.org.in/Scripts/FS_Glossary.aspx?fn=9"
-}
