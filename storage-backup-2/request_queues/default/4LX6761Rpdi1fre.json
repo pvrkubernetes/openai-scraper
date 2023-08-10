@@ -1,0 +1,9 @@
+{
+	"id": "4LX6761Rpdi1fre",
+	"json": "{\"id\":\"4LX6761Rpdi1fre\",\"url\":\"https://rbi.org.in/scripts/FS_PressRelease.aspx?fn=14\",\"uniqueKey\":\"https://rbi.org.in/scripts/FS_PressRelease.aspx?fn=14\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"depth\":1}}",
+	"method": "GET",
+	"orderNo": 1691664869565,
+	"retryCount": 0,
+	"uniqueKey": "https://rbi.org.in/scripts/FS_PressRelease.aspx?fn=14",
+	"url": "https://rbi.org.in/scripts/FS_PressRelease.aspx?fn=14"
+}

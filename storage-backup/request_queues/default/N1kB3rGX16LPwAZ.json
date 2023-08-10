@@ -1,0 +1,9 @@
+{
+	"id": "N1kB3rGX16LPwAZ",
+	"json": "{\"id\":\"N1kB3rGX16LPwAZ\",\"url\":\"https://www.iana.org/go/rfc1035\",\"uniqueKey\":\"https://www.iana.org/go/rfc1035\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"depth\":2}}",
+	"method": "GET",
+	"orderNo": 1691664436200,
+	"retryCount": 0,
+	"uniqueKey": "https://www.iana.org/go/rfc1035",
+	"url": "https://www.iana.org/go/rfc1035"
+}

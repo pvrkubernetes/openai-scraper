@@ -1,9 +1,12 @@
-import { Actor } from 'apify';
+// import { Actor } from 'apify';
 import { PlaywrightCrawler, Dataset, log } from 'crawlee';
+import { PuppeteerCrawler } from 'crawlee';
+
 import { createRequestDebugInfo } from '@crawlee/utils';
+import { Configuration, OpenAIApi, CreateCompletionResponseUsage } from 'openai';
 import { Input } from './input.js';
 import {
-    processInstructions,
+    // processInstructions,
     getNumberOfTextTokens,
     getOpenAIClient,
     validateGPTModel,
@@ -19,6 +22,13 @@ import {
     tryToParseJsonFromString,
 } from './processors.js';
 
+interface GPTModelConfig {
+    model: string;
+    maxTokens: number;
+    interface: 'text' | 'chat';
+    cost?: number; // USD cost per 1000 tokens
+}
+
 // We used just one model and markdown content to simplify pricing, but we can test with other models and contents, but it cannot be set in input for now.
 const DEFAULT_OPENAI_MODEL = 'gpt-3.5-turbo';
 const DEFAULT_CONTENT = 'markdown';
@@ -31,18 +41,61 @@ const MERGE_DOCS_SEPARATOR = '----';
 const MERGE_INSTRUCTIONS = `Merge the following text separated by ${MERGE_DOCS_SEPARATOR} into a single text. The final text should have same format.`;
 
 // Initialize the Apify SDK
-await Actor.init();
+// await Actor.init();
 
 if (!process.env.OPENAI_API_KEY) {
-    await Actor.fail('OPENAI_API_KEY is not set!');
+    // await Actor.fail('OPENAI_API_KEY is not set!');
 }
 
-const input = await Actor.getInput() as Input;
-
+// const input = await Actor.getInput() as Input;
+const input: Input = {
+    model: 'gpt-3.5-turbo',
+    proxyConfiguration: {},
+    maxCrawlingDepth: 3,
+    maxPagesPerCrawl: 1000,
+    linkSelector: 'a',
+    startUrls: ['https://rbi.org.in/'], // ['https://www.apify.com/'],
+    globs: ['https://rbi.org.in/**'], // ['https://www.apify.com/**'],
+    targetSelector: 'body',
+    content: 'markdown',
+    instructions: '',
+    longContentConfig: 'split',
+};
 if (!input) throw new Error('INPUT cannot be empty!');
 // @ts-ignore
 const openai = await getOpenAIClient(process.env.OPENAI_API_KEY, process.env.OPENAI_ORGANIZATION_ID);
 const modelConfig = validateGPTModel(input.model || DEFAULT_OPENAI_MODEL);
+
+const crawler2 = new PuppeteerCrawler({
+    async requestHandler({ request, page, enqueueLinks, log }) {
+        const title = await page.title();
+        log.info(`Title of ${request.url}: ${title}`);
+
+        await enqueueLinks({
+            globs: input.globs,
+        });
+    },
+    maxRequestsPerCrawl: 10,
+});
+
+const processInstructions = async ({
+    modelConfig,
+    openai,
+    prompt,
+}: { modelConfig: GPTModelConfig, openai: OpenAIApi, prompt: string }) => {
+    // You can log or manipulate the input parameters if needed
+    // console.log('Dummy processInstructions called with:', { prompt, openai, modelConfig });
+    // Return a mock result that matches the expected structure of the real result
+    
+    return {
+        answer: prompt,
+        usage: {
+            prompt_tokens: 0,
+            completion_tokens: 0,
+            total_tokens: 0,
+        },
+    };
+};
 
 const crawler = new PlaywrightCrawler({
     launchContext: {
@@ -57,12 +110,16 @@ const crawler = new PlaywrightCrawler({
     preNavigationHooks: [
         async ({ blockRequests }) => {
             // By default blocks [".css", ".jpg", ".jpeg", ".png", ".svg", ".gif", ".woff", ".pdf", ".zip"]
-            await blockRequests();
+            await blockRequests({
+                urlPatterns:
+                    // Block all images
+                    ['.jpg', '.jpeg', '.png', '.svg', '.gif'].map((ext) => `*${ext}`),
+            });
         },
     ],
     // NOTE: GPT-4 is very slow, so we need to increase the timeout
     requestHandlerTimeoutSecs: 3 * 60,
-    proxyConfiguration: input.proxyConfiguration && await Actor.createProxyConfiguration(input.proxyConfiguration),
+    // proxyConfiguration: input.proxyConfiguration, //&& await Actor.createProxyConfiguration(input.proxyConfiguration),
     maxRequestsPerCrawl: input.maxPagesPerCrawl || MAX_REQUESTS_PER_CRAWL,
 
     async requestHandler({ request, page, enqueueLinks }) {
@@ -71,7 +128,9 @@ const crawler = new PlaywrightCrawler({
 
         // Enqueue links
         // If maxCrawlingDepth is not set or 0 the depth is infinite.
-        const isDepthLimitReached = !!input.maxCrawlingDepth && depth < input.maxCrawlingDepth;
+        const isDepthLimitReached = !(depth < input.maxCrawlingDepth);
+
+        //log.info(`isDepth: ${isDepthLimitReached} ${input.linkSelector} ${input?.globs?.length} `);
         if (input.linkSelector && input?.globs?.length && !isDepthLimitReached) {
             const { processedRequests } = await enqueueLinks({
                 selector: input.linkSelector,
@@ -80,6 +139,11 @@ const crawler = new PlaywrightCrawler({
                     depth: depth + 1,
                 },
             });
+            // Debugging logs
+            //log.info(`Link selector: ${input.linkSelector}`);
+            //log.info(`Globs: ${JSON.stringify(input.globs)}`);
+            //log.info(`Processed requests: ${JSON.stringify(processedRequests)}`);
+
             const enqueuedLinks = processedRequests.filter(({ wasAlreadyPresent }) => !wasAlreadyPresent);
             const alreadyPresentLinksCount = processedRequests.length - enqueuedLinks.length;
             log.info(
@@ -243,4 +307,4 @@ await crawler.run();
 log.info(`Crawler finished.`);
 
 // Exit successfully
-await Actor.exit();
+// await Actor.exit();

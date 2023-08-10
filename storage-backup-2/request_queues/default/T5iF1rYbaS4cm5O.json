@@ -1,0 +1,9 @@
+{
+	"id": "T5iF1rYbaS4cm5O",
+	"json": "{\"id\":\"T5iF1rYbaS4cm5O\",\"url\":\"https://rbi.org.in/Scripts/Publications.aspx?publication=Quarterly\",\"loadedUrl\":\"https://rbi.org.in/Scripts/Publications.aspx?publication=Quarterly\",\"uniqueKey\":\"https://rbi.org.in/Scripts/Publications.aspx?publication=Quarterly\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":1,\"errorMessages\":[\"ReferenceError: Cannot access 'processInstructions' before initialization\\n    at PlaywrightCrawler.requestHandler [as userProvidedRequestHandler] (file:///Users/rajattyagi/Applications/DockerizedApplications/pa/aws-eks/jxl-test/chatGPT/openai-scraper/dist/main.js:133:42)\\n    at async wrap (/Users/rajattyagi/Applications/DockerizedApplications/pa/aws-eks/jxl-test/chatGPT/openai-scraper/node_modules/@apify/timeout/index.js:52:21)\"],\"headers\":{},\"userData\":{\"depth\":1,\"__crawlee\":{\"state\":5}}}",
+	"method": "GET",
+	"orderNo": 1691664880941,
+	"retryCount": 1,
+	"uniqueKey": "https://rbi.org.in/Scripts/Publications.aspx?publication=Quarterly",
+	"url": "https://rbi.org.in/Scripts/Publications.aspx?publication=Quarterly"
+}

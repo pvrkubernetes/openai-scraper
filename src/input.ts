@@ -4,7 +4,7 @@ import { ProxyConfigurationOptions, GlobInput, RequestOptions } from '@crawlee/c
  * Input schema in TypeScript format.
  */
 export interface Input {
-    startUrls: RequestOptions[];
+    startUrls: string[]; //RequestOptions[];
     globs: GlobInput[];
     linkSelector?: string;
     instructions: string;

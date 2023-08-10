@@ -1,0 +1,9 @@
+{
+	"id": "n2tvfhbxeP6dHKO",
+	"json": "{\"id\":\"n2tvfhbxeP6dHKO\",\"url\":\"https://www.iana.org/domains/root/db/foo.html\",\"uniqueKey\":\"https://www.iana.org/domains/root/db/foo.html\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"depth\":2}}",
+	"method": "GET",
+	"orderNo": 1691664436508,
+	"retryCount": 0,
+	"uniqueKey": "https://www.iana.org/domains/root/db/foo.html",
+	"url": "https://www.iana.org/domains/root/db/foo.html"
+}

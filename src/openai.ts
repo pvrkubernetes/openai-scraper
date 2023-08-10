@@ -73,6 +73,7 @@ export const processInstructions = async ({
     openai,
     prompt,
 } : { modelConfig: GPTModelConfig, openai: OpenAIApi, prompt: string }) => {
+    
     let answer = '';
     let usage = {} as CreateCompletionResponseUsage;
     const promptTokenLength = getNumberOfTextTokens(prompt);

@@ -1,0 +1,9 @@
+{
+	"id": "zn2NE9y3tQr37Tr",
+	"json": "{\"id\":\"zn2NE9y3tQr37Tr\",\"url\":\"https://rbi.org.in/Scripts/MSM_FinancialisationofSavings.aspx\",\"uniqueKey\":\"https://rbi.org.in/Scripts/MSM_FinancialisationofSavings.aspx\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"depth\":1}}",
+	"method": "GET",
+	"orderNo": 1691664869567,
+	"retryCount": 0,
+	"uniqueKey": "https://rbi.org.in/Scripts/MSM_FinancialisationofSavings.aspx",
+	"url": "https://rbi.org.in/Scripts/MSM_FinancialisationofSavings.aspx"
+}
